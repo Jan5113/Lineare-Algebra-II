@@ -1,0 +1,88 @@
+\section{Lineare Abbildungen auf Skalarprodukträumen}
+\art[T][7.0.1][Spektralsatz über $\C$]{Für $(\C, \Sp_{std})$ sind für ein $A \in M_{n \times n}(\C)$ die folgenden Aussagen äquivalent:
+\begin{enumerate}
+    \item $\quer{A}^TA=A\quer{A}^T$ (normal: kommutiert mit der Adjungierten)
+    \item Es existiert eine Orthonormalbasis von $\C^n$ aus Eigenvektoren von $A$.
+    \item Es existiert eine Orthonormalbasis $\mathcal{B}$ von $\C^n$, sodass $[m_A]_\mathcal{B}$ diagonal ist.
+    \item Es existiert eine unitäre Matrix $P \in GL_n(\C)$, sodass $P^{-1}AP = P^TAP$ diagonal ist.
+\end{enumerate}
+}
+\art[T][7.0.3][Spektralsatz über $\R$]{Für $(\C, \Sp_{std})$ sind für ein $A \in M_{n \times n}(\C)$ die folgenden Aussagen äquivalent:
+\begin{enumerate}
+    \item $A^T=A$ (symmetrisch)
+    \item Es existiert eine Orthonormalbasis von $\R^n$ aus Eigenvektoren von $A$.
+    \item Es existiert eine Orthonormalbasis $\mathcal{B}$ von $\R^n$, sodass $[m_A]_\mathcal{B}$ diagonal ist.
+    \item Es existiert eine orthogonale Matrix $P \in GL_n(\R)$, sodass $P^{-1}AP = P^TAP$ diagonal ist.
+\end{enumerate}
+Es folgt also: $A$ symmetrisch $\implies A$ diagonalisierbar
+}
+\subsection{adjungierte Abbildung}
+\art[D][7.1.1][adjungierte Abbildung]{Sei $T: V \to W$ linear mit $(V,\Sp_V), (W,\Sp_W)$ SPR, dann ist $T^* : W \to V$ definiert durch $\abk{Tv,w}_W = \abk{v,T^*w}_V$}
+\art[L][7.1.3][Eigenschaften von $T^*$]{Für SPR $V,W,U$ und $S,T: V \to W$ und $R:W\to U$ linear gilt:
+\begin{enumerate}
+    \item $T^*$ linear
+    \item $(S + T)^* = S^* + T^*$
+    \item $\bk{\lambda T}^* = \quer{\lambda}T^*$
+    \item $(T^*)^* = T$
+    \item $(Id_V)^* = Id_V$
+    \item $(R\circ T)^* = T^* \circ R^*$
+\end{enumerate}
+}
+\art[L][7.1.5][]{Für $T: V \to W$ gilt
+\begin{enumerate}
+    \item $\ker(T^*)=(\im T)^\perp$
+    \item $\im(T^*)=(\ker T)^\perp$
+    \item $\ker(T)=(\im T^*)^\perp$
+    \item $\im(T)=(\ker T^*)^\perp$
+\end{enumerate}}
+\art[P][7.1.6][]{Für orthonormale Basen $\mathcal{B}$ von $V$ und $\mathcal{C}$ von $W$ gilt für $T:V \to W$: $\sbk{T^*}_\mathcal{B}^\mathcal{C} = \quer{\sbk{T}_\mathcal{C}^\mathcal{B}}^T$}
+\art[K][7.1.8][]{Für $A \in M_{m\times n}(\R/\C)$ mit $\Sp_{std}$ gilt $(m_A)^*=m_{\quer{A}^T}$}
+\art[K][7.1.9][]{Für Matrizen $A,B \in M_{n\times m}(\R/\C), C \in M_{m\times p}(\R/\C)$ gilt:
+\begin{enumerate}
+    \item $\quer{A}^T \in M_{m\times n}(\R/\C)$
+    \item $\quer{(A+B)}^T=\quer{A}^T+\quer{B}^T$
+    \item $\quer{\bk{\lambda A}}^T = \quer{\lambda}\cdot \quer{A}^T$
+    \item $\quer{\bk{\quer{A}^T}}^T = A$
+    \item $\quer{I_n}^T = I_n$
+    \item $\quer{(AC)}^T = \quer{C}^T\quer{A}^T$
+\end{enumerate}
+}
+\subsection{Spektralsätze}
+\art[L][7.2.1][]{Falls $T$ orthogonal diagonalisierbar ist, gilt $TT^*=T^*T$}
+\art[D][7.2.2][normal]{$TT^*=T^*T$ oder $A\quer{A}^T=\quer{A}^TA$}
+\art[S][7.2.3][Spektralsatz über $\C$]{$T\in \End_\C$ orth. diagonalisierbar $\iff T$ normal ($T$ endl. dim.)}
+\art[L][7.2.5][]{Für $T$ normal gilt:
+\begin{enumerate}
+    \item $\norm{Tv} = \norm{T^*v}$
+    \item $(T-\lambda Id_V)$ normal $\forall \lambda$
+    \item $Tv = \lambda v \iff T^*v=\quer{\lambda}v$ (EV \& EW)
+    \item EV von $T$ zu verschiedenen EW sind orthogonal zueinander
+\end{enumerate}}
+\art[K][7.2.7][]{Falls $T$ normal und triagonalisierbar $ \implies $ $T$ orth. diagonalisierbar (über SPR)}
+\art[L][7.2.8][]{Falls $T \in \End_\R(V)$ orth. diagonalisierbar $\implies T^* = T$ }
+\art[D][7.2.9][selbstadjungiert]{$T^* = T$ resp. $\quer{A}^T = A$ (symmetrisch/hermitesch)}
+\art[K][7.2.10][]{Mit $\mathcal{B}$ orthn. gilt $[T]_\mathcal{B} = \quer{[T]_\mathcal{B}}^T \iff T^* = T$}
+\art[S][7.2.12][Spektralsatz über $\R$]{$T\in \End_\R$ orth. diagonalisierbar $\iff T$ selbstadjungiert ($T$ endl. dim.)}
+\art[L][7.2.13][]{Für $T$ in SPR über $\mathbb{F}$ mit $T=T^*$ gilt:
+\begin{enumerate}
+    \item Alle Eigenwerte von $T$ sind reell.
+    \item $p_T$ zerfällt in Linearfaktoren über $\mathbb{F}$.
+\end{enumerate}}
+
+\subsection{Spektralsätze für Matrizen}
+\art[S][7.3.1][]{$\forall A \in M_{n\times n}(\C)$ normal $\exists U \in U(n): U^{-1}AU = \quer{U}^T A U$ diagonal}
+\art[S][7.3.2][]{$\forall A \in M_{n\times n}(\R)$ symmetrisch $\exists O \in O(n): O^{-1}AO = O^T A O$ diagonal}
+\art[][][]{}
+
+\subsection{orthogonale und unitäre Abbildungen}
+
+
+
+%Charakterisierung der adjungierten $\abk{Tv,w} = \abk{v,T^*w}$
+%$T$ selbstadjungiert, wenn $T = T^*$
+%
+%$S,T: V \to W, R: W \to U$, $V,W,U$ SPR über $\mathbb{F}
+%$
+%
+%
+%\textbf{normal} falls $T^* T = TT^*$ resp. $A\quer{A}^T = \quer{A}^TA$%

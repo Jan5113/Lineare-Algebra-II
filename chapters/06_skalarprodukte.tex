@@ -1,0 +1,96 @@
+\setcounter{section}{5}
+\section{Euklidische und unitäre Vektorräume}
+\subsection{Definitionen}
+
+\art[D][6.1.3][Skalarprodukt]{Eine Funktion $\Sp: V \times V \to \R$ mit
+\begin{enumerate}
+    \item $\abk{\alpha v_1 + \beta v_2,w} = \alpha \abk{v_1, w}+\beta\abk{v_2, w}$ \hfill \textit{(lin. in der ersten Variable)}
+    \item $\abk{v,\alpha w_1 + \beta w_2} = \quer{\alpha}\abk{v_1, w}+\quer{\beta}\abk{v_2, w}$ \hfill  \textit{(semilin. in der zweiten Variable)}
+    \item $\abk{v,w} = \quer{\abk{w,v}}$ \hfill \textit{(Symmetrie/Hermitesch)}
+    \item $\abk{v,v} > 0 , \quad \abk{v,v} = 0 \iff v = 0$  \hfill \textit{(Positiv definit)}
+\end{enumerate}
+Mit 1)-3) ist $\Sp$ eine Bilinear-/Sesquilinearform
+}
+\art[D][6.1.5][Skalarproduktraum (SPR)]{Ein Vektorraum mit einem Skalarprodukt, für VR über $\R$/$\C$ ist es ein euklidischer/unitärer Vektorraum.}
+
+\art[L][6.1.6][Eigenschaften SPR]{
+\begin{enumerate}
+    \item $\abk{v,0} = \abk{0,v} = 0$
+    \item $\forall v \in V: \abk{v,w} = 0 \iff v = 0$
+    \item $\forall v \in V: \abk{v,w_1} = \abk{v,w_2} \iff w_1 = w_2$
+\end{enumerate}
+}
+
+\art[D][6.1.7][induzierte Norm]{$\Nrm: V \to \R_{\geq 0}, v \mapsto \sqrt{\abk{v,v}}$, \textit{Distanz} $d(v,w) := \norm{v-w}$, $v$ \textit{normiert}, falls $\norm{v} = 1$}
+
+\art[P][6.1.9][Pythagoras]{$u\perp v \implies \norm{u+v}^2 = \norm{u}^2 + \norm{v}^2$}
+
+\art[D][6.1.11][Orthogonalität]{$v\perp w \iff \abk{v,w} = 0$, $S\perp T \iff \forall s \in S, t \in T: s \perp t $, Orthogonalsystem $S$: $\forall s, s' \in S: s \perp s'$, Orthonormalsystem: $S$ orthogonal und $\forall s \in S: \norm{s} = 1$}
+
+\subsection{Anwendungen}
+\art[B][6.2.1][Standard-Skalarprodukt]{$\Sp: \R^n \times \R^n \to \R$ oder $\C^n \times \C^n \to \C, (v,w) \mapsto \abk{v,w} := v^T\quer{w}$ mit $\Nrm_2$ als induzierte Norm}
+
+\art[D][6.2.9][symmetrische/hermitesche Matrix]{$A^T = \quer{A}$ mit $(\quer{A})_{ij} = \quer{(A_{ij})} \in \{\R, \C\}$}
+
+\art[D][6.2.11][positiv definite Matrix]{Eine Matrix $A$ für die $\forall v \ne 0: v^T A \quer{v} > 0$ gilt.}
+
+\art[L][6.2.13][]{$A = \smat{a&b\\b&c}$ pos. definit $\iff a > 0 \land \abs{A} = ac- b^2 > 0 \iff \abk{v,w}_A := v^TA\quer{w}$ ist Skalarprodukt}
+
+\art[B][6.2.18][Frobenius SP]{$A,B \in M_{n\times n}(\mathbb{F}, (A,B)\mapsto \abk{A,B}_{Frob} = \tr(A^T\quer{B})$}
+
+\subsection{Normen und Winkel}
+\art[D][6.3.1][Norm-Funktion]{Eine Funktion $\Nrm: V \to \R_{\geq 0}$ mit
+\begin{enumerate}
+    \item $\norm{u + v} \leq \norm{u}+\norm{v}$\hfill \textit{(Dreiecksungleichung)}
+    \item $\norm{\alpha v} = \abs{\alpha} \norm{v}$ \hfill \textit{(Homogenität)}
+    \item $\norm{v} = 0 \iff v = 0$ \hfill \textit{(Definitheit)}
+\end{enumerate}
+}
+\art[S][6.3.5][Cauchy-Schwarz Ungleichung]{$\abs{\abk{u,v}} \leq \norm{u}\norm{v}$, Gleichheit genau dann, wenn lin. uabh.}
+\art[K][6.3.7][Dreieckungleichung]{$\Nrm$ induziert auf SPR $(V,\Sp)$: $\norm{u+v} \leq \norm{u}+\norm{v}$}
+\art[D][6.3.8][Winkel]{$\cos \alpha = \frac{\abk{u,v}}{\norm{u}\norm{v}} = \abk{\frac{u}{\norm{u}},\frac{v}{\norm{v}}} = \frac{\abk{u,v}}{\sqrt{\abk{u,u}}\sqrt{\abk{v,v}}}$}
+\art[L][6.3.11][Parallelogramm-Gleichung]{$\norm{v+w}^2 + \norm{v-w}^2 = 2 \norm{v}^2 + 2\norm{w}^2 \iff $ das Skalarprodukt $\abk{v,w} := \frac{1}{4}\bk{\norm{v+w}^2-\norm{v-w}^2}$ induziert $\Nrm$}
+
+\subsection{Orthogonale Systeme \& Zerlegungen}
+\art[D][6.4.1][orthogonale/orthonormale Basis]{orthogonales/orthonormales System}
+\art[P][6.2.4][Koordinatendarstellung in orth. Basis]{Für $\mathcal{B} = (b_1, ..., b_n)$ orthg. und $v = \sum_i v_ib_i$ gilt $a_i = \frac{\abk{v,b_i}}{\abk{b_i, b_i}}$, für $\mathcal{B}$ orthn. $a_i = \abk{v,b_i}$}
+\art[K][6.4.5][]{Orthogonalsysteme sind linear unabhängig}
+\art[P][6.4.6][lin. Abbildungen in orth. Basis]{Für $T: V \to W$ und $\mathcal{B}$ (bel.) Basis von $V$, $\mathcal{C}$ orthn. Basis von $W$, dann gilt $\bk{[T]_\mathcal{C}^\mathcal{B}}_{ij} = \abk{T(b_j), c_i}$}
+\art[S][6.4.7][Gram-Schmidt Algorithmus]{Sei $(v_1,..., v_n)$ eine Basis von $V$ und $w_i$ gegeben durch $w_1 = v_1, w_i = v_i - \sum_k^{i-1} \frac{\abk{v_i,w_k}}{\abk{w_k,w_k}}w_k$, dann ist $\bk{w_1, ..., w_n}$ eine Orthogonalbasis und $(\frac{w_1}{\norm{w_1}},...,\frac{w_n}{\norm{w_n}})$ eine Orthonormalbasis.}
+\art[K][6.4.8][]{Jeder endlich-dimensionale Skalarproduktraum hat eine orthonormale Basis.}
+\art[D][6.4.9][Projektion]{$\Proj_{W}(v) = \sum_i^{n} \frac{\abk{v,w_i}}{\abk{w_i,w_i}}w_i$ mit $W = \spn(w_1, ..., w_n)$ orthg.}
+\art[L][6.4.12][Länge in orthn. Basis]{Für $v = \sum_i^nv_ie_i$ mit $(e_1, ..., e_n)$ orthn. gilt $\norm{v}^2 = \abk{v,v} = \sum_i^n\abs{v_i}^2$}
+\art[D][6.4.13][orthogonale/unitäre Matrix]{Spalten bilden bzgl. des std. Skalarprodukts eine Basis von $\R^n$/$\C^n$. $O(n) \subseteq M_{n\times n}(\R^n)$ resp. $U(n) \subseteq M_{n\times n}(\C^n)$ Menge aller orthogonalen resp. unitären Matrizen}
+\art[L][6.4.16][]{$A \text{ orthognal/unitär} \iff A^T\quer{A} = I_n \iff A\quer{A}^T = I_n \iff A^{-1} = \quer{A}^T$}
+\art[K][6.4.17][]{Matrix orthogonal/unitär $\iff$ Zeilenvektoren bilden eine Orthonormalbasis}
+\art[S][6.4.18][QR-Zerlegung]{$A \in GL_n(\R^n/\C^n)$ lässt sich in eine orthogonale/unitäre Matrix $Q \in O(n)/U(n)$ und in eine obere Dreiecksmat $R$ zerlegen: $A = QR$. Mit $A = (v_1, ..., v_n)$ erhält man $(e_1, ..., e_n)$ durch Gram-Schmidt (orthn.) und $Q = (e_1, ..., e_n)$ resp. $R_{ij} = \abk{v_j, e_i}$}
+
+\art[S][6.4.22][Schur-Zerlegung]{Sei $T: V \to V$ triagonalisierbar, $\abs{V}<\infty$, dann existiert eine orthn. Basis $\mathcal{B}$, sodass $[T]_\mathcal{B}$ eine obere Dreiecksmat. ist (orthogonal triagonalisierbar)}
+\art[K][6.4.23][]{Ein Endomorphismus $T$ auf einem euklidischen VR ist orth. trigonalisierbar genau dann, wenn $p_T$ in Linearfaktoren zerfällt.}
+\art[K][6.4.24][]{Jeder Endomorphismus auf einem unitären Vektorraum ist orthogonal trigonalisierbar.}
+\art[K][6.4.25][Schur-Zerlegung über $\R$]{$p_A$ von $A\in M_{n \times n}(\R)$ zerfällt in Linearfaktoren, dann existiert $O \in O(n)$ und obere Dreiecksmat. $R\in M_{n \times n}(\R)$, sodass $O^TAO = R$}
+\art[K][6.4.25][Schur-Zerlegung über $\C$]{Sei $A\in M_{n \times n}(\C)$, dann existiert $U \in U(n)$ und obere Dreiecksmat. $R\in M_{n \times n}(\C)$, sodass $\quer{U}^TAU = R$}
+
+\subsection{Dualraum in SPR}
+\art[D][6.5.1][Linearform]{Funktion $\phi: V \to K$ mit $\phi(\alpha v + w) = \alpha \phi(v) + \phi(w)$, $\phi \in V^*$ ist die Menge aller Linearformen mit VR-Operationen $(\phi + \psi)(v) := \phi(v) + \psi(v)$ und $(\alpha \phi)(v) := \alpha \phi(v)$}
+\art[S][6.5.5][Darstellungssatz von Riesz]{Für endlichdimensionaler SPR $V$ gilt: $\forall \phi \in V^* \exists!u \in V: \phi(v) = \abk{v,u}$ für alle $v \in V$, also sind $V$ und $V^*$ isomorph. Es gilt $u = \sum_i^n\phi(e_i)e_i$ für orthonormale Basis $(e_1, ..., e_n)$}
+\art[B][6.5.9][]{$V \sim V^*$ gilt auch, wenn $V$ kein SPR ist, jedoch ist dieser Isomorphismus ($\Phi: V \to V^*$) nicht kanonisch, also abhängig von der Wahl der Basis. $(V^*)^*$ hingegen ist kanonisch isomorph (für $\abs{V}<\infty$).}
+
+\subsection{Orthogonales Komplement}
+\art[D][6.6.1][orthogonales Komplement]{$S \subseteq V$ Teilmenge, $S^\perp = \set{v \in V}{\forall s \in S \abk{s,v} = 0}$}
+\art[L][6.6.2]{ $\forall S, T \subseteq V$ gilt
+    \begin{enumerate}
+        \item $S^\perp$ ist UVR
+        \item $0_V^\perp = V$, $V^\perp = \{0_V\}$
+        \item $S \cap S^\perp \subseteq \{0_V\}$
+        \item $S \subseteq T \iff T^\perp \subseteq S^\perp$
+        \item $\spn(S)^\perp = S^\perp$
+        \item $S \subseteq (S^\perp)^\perp$
+    \end{enumerate}}
+\art[S][6.6.3]{Sei $U$ UVR von SPR $V$ über $F$ mit $\abs{U} < \infty \implies V = U \oplus U^\perp$}
+\art[D][6.6.4][orthogonale Projektion]{$\Proj_U(v) := \abk{v, e_1}e_1 + ... + \abk{v,e_r}e_r$ mit $(e_1, ..., e_r)$ orthn. Basis von $U$}
+\art[P][6.6.5][]{$\Proj_U$ ist wohldefiniert (unabhängig von Basis) und es gilt $v - \Proj_U(v) \in U^\perp$}
+\art[K][6.6.6][]{Sei $U \subseteq V$ ein endlichdim. UVR, dann gilt $(U^\perp)^\perp = U$}
+\art[K][6.6.7][]{Sei $U \subseteq V$ ein endlichdim. UVR, dann gilt $\dim V = \dim U + \dim U^\perp$}
+\art[S][6.6.9][Minimierung]{Sei $U \subseteq V$ ein endlichdim. UVR, dann gilt $\norm{v-\Proj_U(v)} \leq \norm{v-u}$ für alle $u \in U, v \in V$ mit Gleichheit bei $u = \Proj_U(v)$}
+\art[L][6.6.11][Hächl-Basis]{Sei $A \in M_{m \times n}$ und $(x_1,...,x_k)$ die Zeilen von $A$, dann bilden $(Ax_1^T,...,Ax_k^T)$ eine Basis vom Bild von $A$.}
